@@ -1,0 +1,2 @@
+// Configuração do Mentorixs Hub em produção (hub.mentorixs.com.br).
+window.MENTORIXS_CONFIG = { modo: 'producao', supabaseUrl: 'https://rvwbameqatclfnaesqwe.supabase.co', supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ2d2JhbWVxYXRjbGZuYWVzcXdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ0MTI2MzUsImV4cCI6MjEwOTk4ODYzNX0.4yRqi1gFAYJSA-YJtwPPlt-PhPwGi8MbFpsnxLDg3SM' }
