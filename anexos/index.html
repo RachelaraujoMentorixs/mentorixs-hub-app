@@ -1,0 +1,17 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Protótipo da proposta · Mentorixs</title>
+<style>body{margin:0;font-family:system-ui,sans-serif;background:#f6f4fb;color:#2b1d4a}header{background:#4b2a8f;color:#fff;padding:16px 18px;font-weight:700}main{padding:14px;max-width:900px;margin:auto}h2{font-size:18px;margin:20px 0 8px}img{width:100%;height:auto;border-radius:10px;background:#fff;box-shadow:0 1px 6px #0002;margin-bottom:12px;display:block}.pdf{display:block;background:#fff;border:1px solid #d9d0ee;border-radius:12px;padding:14px;margin-bottom:10px;text-decoration:none;color:#2b1d4a}.pdf b{display:block;margin-bottom:8px;word-break:break-word}.pdf span{display:inline-block;background:#4b2a8f;color:#fff;padding:10px 16px;border-radius:8px;font-weight:600}p{color:#6b5d8a}</style></head><body>
+<header>Mentorixs · Protótipo da proposta</header><main id="m"><p>Carregando…</p></main>
+<script src="../config.js"></script>
+<script>
+(function(){var C=window.MENTORIXS_CONFIG,t=new URLSearchParams(location.search).get('t'),m=document.getElementById('m');
+function esc(s){return String(s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+if(!t){m.innerHTML='<p>Link inválido.</p>';return}
+fetch(C.supabaseUrl+'/rest/v1/rpc/proposta_prototipo',{method:'POST',headers:{apikey:C.supabaseAnonKey,Authorization:'Bearer '+C.supabaseAnonKey,'Content-Type':'application/json'},body:JSON.stringify({p_token:t})})
+.then(function(r){return r.json()}).then(function(l){
+if(!Array.isArray(l)||!l.length){m.innerHTML='<p>Nenhum anexo encontrado.</p>';return}
+var u=function(a){return C.supabaseUrl+'/storage/v1/object/public/propostas/'+a.caminho.split('/').map(encodeURIComponent).join('/')};
+var im=l.filter(function(a){return a.tipo==='imagem'}),pd=l.filter(function(a){return a.tipo==='pdf'}),h='';
+if(im.length)h+='<h2>Imagens</h2>'+im.map(function(a){return'<a href="'+u(a)+'"><img src="'+u(a)+'" alt="'+esc(a.legenda||a.nome)+'"></a>'}).join('');
+if(pd.length)h+='<h2>Documentos PDF</h2>'+pd.map(function(a){return'<a class="pdf" href="'+u(a)+'" target="_blank" rel="noopener"><b>'+esc(a.legenda||a.nome)+'</b><span>Abrir o PDF</span></a>'}).join('');
+m.innerHTML=h}).catch(function(){m.innerHTML='<p>Não foi possível carregar. Tente novamente.</p>'})})();
+</script></body></html>
