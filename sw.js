@@ -2,7 +2,7 @@
    Segurança: nunca guarda dados do sistema. Só arquivos estáticos do próprio Hub
    (código, estilos, ícones). Requisições ao Supabase (outro domínio), páginas e
    dados de clientes passam direto pela rede, sem cache. */
-const VERSAO = 'hub-pwa-v2';
+const VERSAO = 'hub-pwa-v3';
 const ESTATICOS = `${VERSAO}-estaticos`;
 const PRE = ['/offline.html', '/manifest.webmanifest', '/pwa/icon-192.png', '/pwa/icon-512.png', '/pwa/apple-touch-icon.png'];
 

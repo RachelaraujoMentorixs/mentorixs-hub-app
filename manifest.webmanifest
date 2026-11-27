@@ -8,8 +8,8 @@
   "display": "standalone",
   "orientation": "any",
   "lang": "pt-BR",
-  "background_color": "#7352C7",
-  "theme_color": "#7352C7",
+  "background_color": "#341E6E",
+  "theme_color": "#341E6E",
   "icons": [
     {"src": "/pwa/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
     {"src": "/pwa/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
