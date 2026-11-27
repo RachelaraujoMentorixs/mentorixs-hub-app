@@ -2,9 +2,9 @@
    Segurança: nunca guarda dados do sistema. Só arquivos estáticos do próprio Hub
    (código, estilos, ícones). Requisições ao Supabase (outro domínio), páginas e
    dados de clientes passam direto pela rede, sem cache. */
-const VERSAO = 'hub-pwa-v3';
+const VERSAO = 'hub-pwa-v4';
 const ESTATICOS = `${VERSAO}-estaticos`;
-const PRE = ['/offline.html', '/manifest.webmanifest', '/pwa/icon-192.png', '/pwa/icon-512.png', '/pwa/apple-touch-icon.png'];
+const PRE = ['/offline.html', '/manifest.webmanifest', '/pwa/v2-icon-192.png', '/pwa/v2-icon-512.png', '/pwa/v2-apple-touch-icon.png'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(ESTATICOS).then((c) => c.addAll(PRE)));
@@ -52,7 +52,7 @@ self.addEventListener('fetch', (e) => {
 self.addEventListener('push', (e) => {
   let d = {};
   try { d = e.data ? e.data.json() : {}; } catch { d = { title: 'Mentorixs Hub', body: e.data && e.data.text() }; }
-  e.waitUntil(self.registration.showNotification(d.title || 'Mentorixs Hub', { body: d.body || '', icon: '/pwa/icon-192.png', badge: '/pwa/icon-monochrome-512.png', data: { url: d.url || '/' } }));
+  e.waitUntil(self.registration.showNotification(d.title || 'Mentorixs Hub', { body: d.body || '', icon: '/pwa/v2-icon-192.png', badge: '/pwa/v2-icon-monochrome-512.png', data: { url: d.url || '/' } }));
 });
 self.addEventListener('notificationclick', (e) => {
   e.notification.close();

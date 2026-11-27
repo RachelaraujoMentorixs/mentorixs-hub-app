@@ -11,10 +11,10 @@
   "background_color": "#341E6E",
   "theme_color": "#341E6E",
   "icons": [
-    {"src": "/pwa/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
-    {"src": "/pwa/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
-    {"src": "/pwa/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable"},
-    {"src": "/pwa/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"},
-    {"src": "/pwa/icon-monochrome-512.png", "sizes": "512x512", "type": "image/png", "purpose": "monochrome"}
+    {"src": "/pwa/v2-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "/pwa/v2-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "/pwa/v2-icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable"},
+    {"src": "/pwa/v2-icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"},
+    {"src": "/pwa/v2-icon-monochrome-512.png", "sizes": "512x512", "type": "image/png", "purpose": "monochrome"}
   ]
 }
