@@ -603,6 +603,7 @@ Treinamos a equipe e colocamos o sistema no ar.`,q=e=>String(e??"").replace(/[&<
 <section id="prototipo" ${xe.length?"":"hidden"}>
 <h2>Protótipo do sistema</h2>
 <p class="sub">Veja como o sistema vai ficar. Toque nas telas para ampliar.</p>
+${e.token_publico?`<p class="sub"><b>Não aparece a imagem ou o PDF?</b> Abra no navegador (Safari/Chrome): https://hub.mentorixs.com.br/anexos/?t=${e.token_publico}</p>`:""}
 <div class="proto-grid" id="proto-imgs">${xe.filter(S=>S.tipo==="imagem"&&/^https:\/\//.test(S.url)).map(S=>`<figure class="proto-it"><a href="${q(S.url)}" target="_blank" rel="noopener"><img src="${q(S.url)}" alt="${q(S.legenda||S.nome)}"></a>${S.legenda?`<figcaption>${q(S.legenda)}</figcaption>`:""}</figure>`).join("")}</div>
 <div class="proto-pdfs" id="proto-pdfs">${xe.filter(S=>S.tipo==="pdf"&&/^https:\/\//.test(S.url)).map(S=>`<div class="card proto-pdf"><div class="proto-pdf-h"><b>${q(S.legenda||S.nome)}</b><a class="proto-btn" href="${q(S.url)}" target="_blank" rel="noopener">Abrir o PDF</a></div></div>`).join("")}</div>
 </section>
