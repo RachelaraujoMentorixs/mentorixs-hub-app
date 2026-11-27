@@ -1,0 +1,10 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Proposta · Mentorixs</title><style>body{font-family:system-ui,sans-serif;text-align:center;padding:40px;color:#4b2a8f}</style></head><body><p id="m">Carregando proposta…</p>
+<script src="../config.js"></script>
+<script>
+(function(){var C=window.MENTORIXS_CONFIG,t=new URLSearchParams(location.search).get('t'),m=document.getElementById('m');
+if(!t){m.textContent='Link inválido.';return}
+fetch(C.supabaseUrl+'/rest/v1/rpc/proposta_publica',{method:'POST',headers:{apikey:C.supabaseAnonKey,Authorization:'Bearer '+C.supabaseAnonKey,'Content-Type':'application/json'},body:JSON.stringify({p_token:t})})
+.then(function(r){return r.json()}).then(function(h){
+if(typeof h!=='string'||!h){m.textContent='Proposta não encontrada ou indisponível.';return}
+document.open();document.write(h);document.close()}).catch(function(){m.textContent='Não foi possível carregar a proposta. Tente novamente.'})})();
+</script></body></html>
